@@ -2,6 +2,8 @@ import java.util.*;
 import java.io.*;
 
 public class SortTest {
+  public static int inputNumberCount;
+
   public static int[] read() {
     // 標準入力からの入力ファイル名を受け取り，入力ファイル内のソート対象データを配列に格納し，得られた配列を返す．
     Scanner scan = new Scanner(System.in);
@@ -16,6 +18,7 @@ public class SortTest {
         int num = sc.nextInt();
         numbers[i++] = num;
       }
+      inputNumberCount = i;
     } catch (FileNotFoundException ex) {
       System.out.println("Filename: " + intputFileName + "is not found");
       return null;
@@ -26,12 +29,14 @@ public class SortTest {
     // ソートされたデータを画面に出力する．
     int counter = 1;
     for (int num : sorted) {
+      if (num == 0) continue;
       System.out.print(rightJustify(num));
-      if (counter++ % 10 == 0) {
+      if (counter % 10 == 0) {
         System.out.print("\n");
-      } else {
+      } else if (counter != inputNumberCount){
         System.out.print(" ");
       }
+      counter++;
     }
   }
 
