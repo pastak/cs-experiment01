@@ -24,8 +24,9 @@ public class SortTest {
     }
     int[] res = new int[numbers.size()];
     for (int i = 0; i < numbers.size(); i++) {
-      if (res[i] < 1 || res[i] > 9999) throw new IllegalStateException("入力可能な値は自然数で1以上9999以下です");
-      res[i] = numbers.get(i);
+      int num = numbers.get(i);
+      if (num < 1 || num > 9999) throw new IllegalStateException("入力可能な値は自然数で1以上9999以下です");
+      res[i] = num;
     }
     return res;
   }
