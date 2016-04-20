@@ -3,7 +3,7 @@ import java.io.*;
 
 public class MyListTest {
 
-  public static ArrayList<Integer> fromString(String input) {
+  public static ArrayList<Integer> ArrayListfromString(String input) {
     ArrayList<Integer> list = new ArrayList<Integer>();
     String[] splited_input = input.split(",");
     for (int i = 0; i < splited_input.length; i++) {
@@ -17,7 +17,7 @@ public class MyListTest {
     // 10個の自然数をキーボードから入力し，それらを入力順に先頭から並べたリストを作り，画面に表示する．
     System.out.print("自然数を10個`,`で区切って入力: ");
     String userIntputListString = scan.next();
-    ArrayList<Integer> list = fromString(userIntputListString);
+    ArrayList<Integer> list = ArrayListfromString(userIntputListString);
     // 次の処理を10回繰り返す: 自然数をキーボードから入力する度に，それを insert した結果のリストを出力する．
     MyList.output(list);
     for (int i = 0; i < 10; i++) {
