@@ -42,7 +42,6 @@ public class SortTest {
     // ソートされたデータを画面に出力する．
     int counter = 1;
     for (int num : array) {
-      if (num == 0) continue;
       System.out.print(rightJustify(num));
       if (counter % 10 == 0) {
         System.out.print("\n");
