@@ -65,8 +65,10 @@ public class SortTest {
   }
 
   public static void main(String[] args) {
-    int[] array = input();
-    BubbleSort.sort(array);
-    output(array);
+    try {
+      int[] array = input();
+      BubbleSort.sort(array);
+      output(array);
+    } catch (NullPointerException e) {}
   }
 }
