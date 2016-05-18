@@ -18,6 +18,9 @@ public class SortTest {
     } catch (FileNotFoundException ex) {
       System.out.println("Filename: " + intputFileName + " is not found");
       return null;
+    } catch (InputMismatchException ex) {
+      System.out.println("整数ではない値が含まれています");
+      return null;
     }
     try {
       return validate(numbers);
