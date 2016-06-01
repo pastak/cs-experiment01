@@ -27,9 +27,19 @@ public class MyListTest {
       userInputListString = scan.next();
       try {
         ArrayListFillbyString(list, userInputListString);
-        userInputCheck = true;
+        if (list.size() == 10) {
+          userInputCheck = true;
+        } else {
+          System.out.print("入力された自然数の個数が10個ではないですが実行しますか？(実行する場合はY/再入力する場合はその他の文字を入力): ");
+          userInputListString = scan.next();
+          if (userInputListString.equals("Y")) {
+            userInputCheck = true;
+          }
+        }
       } catch (IllegalStateException ex) {
         System.out.println("入力値が不正です: " + ex.getMessage());
+      } catch (NumberFormatException ex) {
+        System.out.println("入力に自然数以外が含まれています");
       }
     }
     // 次の処理を10回繰り返す: 自然数をキーボードから入力する度に，それを insert した結果のリストを出力する．
@@ -42,6 +52,9 @@ public class MyListTest {
       } catch (IllegalStateException ex) {
         System.out.println("入力値が不正です: " + ex.getMessage());
         i--;
+      } catch (NumberFormatException ex) {
+        System.out.println("入力に自然数以外が含まれています");
+        i--;
       }
     }
     // 次の処理を10回繰り返す: 自然数をキーボードから入力する度に，それを delete した結果のリストを出力する．
@@ -52,6 +65,9 @@ public class MyListTest {
         MyList.output(list);
       } catch (IllegalStateException ex) {
         System.out.println("入力値が不正です: " + ex.getMessage());
+        i--;
+      } catch (NumberFormatException ex) {
+        System.out.println("入力に自然数以外が含まれています");
         i--;
       }
     }
